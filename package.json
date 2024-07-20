@@ -1,0 +1,67 @@
+{
+  "name": "remix-server",
+  "version": "0.0.0",
+  "exports": {
+    "./hono": {
+      "import": {
+        "types": "./dist/hono/index.d.ts",
+        "default": "./dist/hono/index.js"
+      },
+      "require": {
+        "types": "./dist/hono/index.d.cts",
+        "default": "./dist/hono/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "author": {
+    "email": "doinki94@gmail.com",
+    "name": "doinki",
+    "url": "https://github.com/doinki"
+  },
+  "bugs": "https://github.com/doinki/remix-server/issues",
+  "homepage": "https://github.com/doinki/remix-server#readme",
+  "keywords": [
+    "remix"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/doinki/remix-server.git"
+  },
+  "packageManager": "pnpm@9.5.0",
+  "files": [
+    "dist",
+    "CHANGELOG.md"
+  ],
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {
+    "build": "tsup",
+    "publint": "publint",
+    "version": "changeset version && pnpm install --lockfile-only",
+    "publish": "pnpm run build && pnpm run publint && changeset publish"
+  },
+  "peerDependencies": {
+    "@remix-run/node": "^2.0.0",
+    "hono": "^4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "hono": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.7",
+    "@remix-run/node": "^2.10.3",
+    "@types/node": "^20.14.11",
+    "esbuild-plugin-extension": "^0.0.2",
+    "hono": "^4.5.0",
+    "publint": "^0.2.9",
+    "tsup": "^8.1.2",
+    "typescript": "^5.5.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
