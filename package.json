@@ -2,6 +2,16 @@
   "name": "remix-server",
   "version": "0.0.2",
   "exports": {
+    "./fastify": {
+      "import": {
+        "types": "./dist/fastify/index.d.ts",
+        "default": "./dist/fastify/index.js"
+      },
+      "require": {
+        "types": "./dist/fastify/index.d.cts",
+        "default": "./dist/fastify/index.cjs"
+      }
+    },
     "./hono": {
       "import": {
         "types": "./dist/hono/index.d.ts",
@@ -43,19 +53,29 @@
     "publish": "pnpm run build && pnpm run publint && changeset publish"
   },
   "peerDependencies": {
+    "@remix-run/node": "^2.0.0",
     "@remix-run/server-runtime": "^2.0.0",
+    "fastify": "^4.0.0",
     "hono": "^4.0.0"
   },
   "peerDependenciesMeta": {
+    "@remix-run/node": {
+      "optional": true
+    },
+    "fastify": {
+      "optional": true
+    },
     "hono": {
       "optional": true
     }
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.7",
+    "@remix-run/node": "^2.10.3",
     "@remix-run/server-runtime": "^2.10.3",
     "@types/node": "^20.14.11",
     "esbuild-plugin-extension": "^0.0.2",
+    "fastify": "^4.28.1",
     "hono": "^4.5.0",
     "publint": "^0.2.9",
     "tsup": "^8.2.0",
