@@ -2,7 +2,7 @@ import {
   type AppLoadContext,
   createRequestHandler as createRemixRequestHandler,
   type ServerBuild,
-} from '@remix-run/node';
+} from '@remix-run/server-runtime';
 import { type Context } from 'hono';
 
 export interface GetLoadContextFunction {
@@ -18,7 +18,7 @@ export function createRequestHandler({
   getLoadContext,
   mode = process.env.NODE_ENV,
 }: {
-  build: ServerBuild | (() => Promise<ServerBuild>);
+  build: ServerBuild | (() => ServerBuild | Promise<ServerBuild>);
   getLoadContext?: GetLoadContextFunction;
   mode?: string;
 }): RequestHandler {
