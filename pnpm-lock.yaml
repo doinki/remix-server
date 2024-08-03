@@ -20,6 +20,9 @@ importers:
       '@types/node':
         specifier: ^20.14.11
         version: 20.14.11
+      elysia:
+        specifier: ^1.1.5
+        version: 1.1.5(@sinclair/typebox@0.32.35)(typescript@5.5.3)
       esbuild-plugin-extension:
         specifier: ^0.0.2
         version: 0.0.2
@@ -418,6 +421,9 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@sinclair/typebox@0.32.35':
+    resolution: {integrity: sha512-Ul3YyOTU++to8cgNkttakC0dWvpERr6RYoHO2W47DLbFvrwBDJUY31B1sImH6JZSYc4Kt4PyHtoPNu+vL2r2dA==}
+
   '@types/cookie@0.6.0':
     resolution: {integrity: sha512-4Kh9a6B2bQciAhf7FSuMRRkUWecJgJu9nPnx3yzpsfXX/c50REIqpHY4C82bXP90qrLtXtkDxTZosYO3UpOwlA==}
 
@@ -633,6 +639,18 @@ packages:
 
   eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
+
+  elysia@1.1.5:
+    resolution: {integrity: sha512-wtJZE4vkn5WLH+Lfpl7cWDoF03OfoEb2elvRjtVD/OGjH5l1DIDuI92idVLbILOHvwx8YySFkXv2n41WwkFlfw==}
+    peerDependencies:
+      '@sinclair/typebox': '>= 0.32.0'
+      openapi-types: '>= 12.0.0'
+      typescript: '>= 5.0.0'
+    peerDependenciesMeta:
+      openapi-types:
+        optional: true
+      typescript:
+        optional: true
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -1898,6 +1916,8 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.19.0':
     optional: true
 
+  '@sinclair/typebox@0.32.35': {}
+
   '@types/cookie@0.6.0': {}
 
   '@types/estree@1.0.5': {}
@@ -2089,6 +2109,14 @@ snapshots:
       path-type: 4.0.0
 
   eastasianwidth@0.2.0: {}
+
+  elysia@1.1.5(@sinclair/typebox@0.32.35)(typescript@5.5.3):
+    dependencies:
+      '@sinclair/typebox': 0.32.35
+      cookie: 0.6.0
+      fast-decode-uri-component: 1.0.1
+    optionalDependencies:
+      typescript: 5.5.3
 
   emoji-regex@8.0.0: {}
 
